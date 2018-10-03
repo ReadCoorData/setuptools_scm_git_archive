@@ -27,10 +27,4 @@ meta = dict(
 )
 
 # Bootstrap
-try:
-    load_entry_point(meta['name'], ENTRY_GROUP, ENTRY_NAME)
-except (DistributionNotFound, ImportError):
-    setup(version='0', **meta)
-    working_set.add_entry('.')
-
-setup(use_scm_version=True, **meta)
+setup(use_scm_version=False, **meta)
